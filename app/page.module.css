@@ -1,0 +1,209 @@
+/* importation de la police dosis qui ressemble grandiment a Dose utilisé sur l'exemple  */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+/* styles/Home.module.css */
+
+
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Dosis", sans-serif;
+  font-weight: bolder;
+}
+
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.topLeft {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  z-index: 1;
+  font-size: 25px;
+}
+
+.bottomRight {
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  color: white;
+  z-index: 1;
+  text-align: end;
+  font-size: 25px;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+}
+.logoClick{
+  border-radius: 180px;
+  width: 100%;
+  height: 100%;
+}
+.newsContainer{
+  position: relative;
+  top: 50%;
+  width: 100%;
+  z-index: 1;
+  display: grid;
+  justify-content: center;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.newsContainerRetracted{
+  width: 270px;
+  height: 40px;
+  z-index: 1;
+  text-align: center;
+  border: 5px;
+  color: #fff;
+  border: 4px solid #fff;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 15px;
+}
+.newsContainerExpanded{
+  position: relative;
+  height: 400px;
+  width: 1500px;
+  z-index: 1;
+  text-align: center;
+  border: 5px;
+  color: #0169cf;
+  border: 4px solid #0169cf;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: default;
+  transition: 0.5s;
+  border-radius: 18px;
+}
+.newsContainerExpanded h2{
+  cursor: pointer;
+}
+
+.handIcone{
+  position: relative;
+  transform: translate(5px, 5px) rotate(0deg) scale(1);
+  animation: handMove 3s infinite;
+}
+
+.collapsed {
+  transform: scale(1);
+}
+
+.expanded {
+  transform: scale(1.2);
+}
+
+.newsContainerRetracted input,
+.newsContainerExpanded input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.InformationText{
+  text-align: start;
+  font-size: 25px;
+  margin: 25px 0px 25px 20px;
+}
+.videoLink{
+  border: 2px solid #0169cf;
+  padding: 4px;
+  border-radius: 8px;
+  transition: 0.5s;
+  font-size: 20px;
+}
+.videoLink:hover{
+  border: 2px solid #0169cf;
+  padding: 4px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+/*Responsive*/
+
+@media screen and (max-width: 1530px){
+  .newsContainerExpanded{
+    width: 1200px;
+  }
+}
+@media screen and (max-width: 1230px){
+  .newsContainerExpanded{
+    width: 900px;
+  }
+}
+@media screen and (max-width: 930px){
+  .newsContainerExpanded{
+    height: 400px;
+    width: 600px;
+  }
+  .InformationText{
+    font-size: 23.5px;
+    margin: 20px 150px 20px 20px;
+  }
+}
+@media screen and (max-width: 770px){
+  .bottomRight {
+    top: 34%;
+  }
+}
+@media screen and (max-width: 630px){
+  .newsContainerExpanded{
+    height: 400px;
+    width: 400px;
+  }
+  .InformationText{
+    text-align: start;
+    font-size: 21px;
+    margin: 10px 100px 25px 20px;
+  }
+  .videoLink{
+    padding: 3px;
+    font-size: 18px;
+  }
+}
+
+/*Animation du doigt*/
+
+@keyframes handMove {
+  0%{
+    transform: rotate(20deg) translate(5px, 5px) scale(1);
+  }
+  45%{
+    transform: rotate(2deg) translate(5px, 5px) scale(1)
+  }
+  50%{
+    transform: rotate(0deg) translate(5px, 5px) scale(0.85);
+  }
+  55%{
+    transform: rotate(2deg) translate(5px, 5px) scale(1)
+  }
+  100%{
+    transform: rotate(20deg) translate(5px, 5px) scale(1);
+  }
+}
